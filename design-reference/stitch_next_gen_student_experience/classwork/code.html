@@ -1,0 +1,392 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EduPulse - Classwork</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Sora:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .featured-glow-cyan {
+            border-top: 2px solid #4cd7f6;
+            box-shadow: 0 4px 20px rgba(76, 215, 246, 0.1);
+        }
+        .featured-glow-violet {
+            border-top: 2px solid #d2bbff;
+            box-shadow: 0 4px 20px rgba(210, 187, 255, 0.1);
+        }
+        .featured-glow-green {
+            border-top: 2px solid #4edea3;
+            box-shadow: 0 4px 20px rgba(78, 222, 163, 0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b1326;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3449;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a4455;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#ccc3d8",
+                      "on-primary": "#3f008e",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "tertiary-fixed": "#6ffbbe",
+                      "surface-container": "#171f33",
+                      "surface-bright": "#31394d",
+                      "inverse-surface": "#dae2fd",
+                      "primary-fixed-dim": "#d2bbff",
+                      "primary-fixed": "#eaddff",
+                      "secondary-fixed": "#acedff",
+                      "inverse-primary": "#732ee4",
+                      "on-error": "#690005",
+                      "on-primary-fixed-variant": "#5a00c6",
+                      "error": "#ffb4ab",
+                      "on-tertiary": "#003824",
+                      "on-secondary-fixed": "#001f26",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "outline": "#958da1",
+                      "primary": "#d2bbff",
+                      "on-tertiary-container": "#76ffc2",
+                      "error-container": "#93000a",
+                      "secondary": "#4cd7f6",
+                      "on-error-container": "#ffdad6",
+                      "surface-variant": "#2d3449",
+                      "surface-dim": "#0b1326",
+                      "surface-container-high": "#222a3d",
+                      "on-secondary-container": "#00424e",
+                      "tertiary-container": "#007650",
+                      "surface-container-lowest": "#060e20",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "background": "#0b1326",
+                      "on-secondary": "#003640",
+                      "inverse-on-surface": "#283044",
+                      "primary-container": "#7c3aed",
+                      "outline-variant": "#4a4455",
+                      "surface": "#0b1326",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-background": "#dae2fd",
+                      "surface-container-low": "#131b2e",
+                      "surface-container-highest": "#2d3449",
+                      "surface-tint": "#d2bbff",
+                      "on-surface": "#dae2fd",
+                      "on-tertiary-fixed": "#002113",
+                      "tertiary": "#4edea3",
+                      "on-primary-fixed": "#25005a",
+                      "secondary-container": "#03b5d3",
+                      "on-primary-container": "#ede0ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "4px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px",
+                      "md": "20px",
+                      "sm": "12px",
+                      "lg": "32px",
+                      "base": "8px",
+                      "margin-desktop": "40px",
+                      "xl": "48px"
+              },
+              "fontFamily": {
+                      "title-md": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "stats-number": ["Sora"],
+                      "headline-lg-mobile": ["Sora"],
+                      "display-lg": ["Sora"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "stats-number": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "800"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen md:pb-0 md:pl-72">
+<!-- Desktop Navigation Drawer -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full w-72 bg-surface-dim border-r border-white/10 flex-col py-lg z-50">
+<div class="px-6 mb-lg">
+<h1 class="font-display-lg text-primary tracking-tighter text-[32px]">EduPulse</h1>
+</div>
+<div class="flex items-center gap-4 px-6 py-4 mb-base">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="A professional student profile portrait of Alex Rivers, a young adult with a confident expression, wearing a modern tech-casual hoodie. The lighting is dramatic and cinematic with purple and cyan rim lights reflecting the dark-mode aesthetic of the dashboard. High-resolution photography style with a blurred background of a futuristic university campus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj7kuYHFrfG77cKoNocxJglj4uxTPoZ2wFKTpAwx_eePnnQ7iEyfzZMqMPB-W--Q4ycpHuqH15emRyfuxCwHgITM8LvA3Ky_dkJR79PNMs3a4qsUFztV0vuPQdMvxNUNthLLxaItuAILeBWGBkgd1tpsStYGeFlKgtYwE1aBmCJelJrqjBFY1LXTrVUWJM2X0GX9nZi9gw70l9yRAnazpjzGbyLX-LGFc6ESx_2WnwmxrfzZtpdPY6YOAhNXOcsAjzTTnI_idFOz0c">
+</div>
+<div>
+<p class="font-title-md text-[16px] text-on-surface">Alex Rivers</p>
+<p class="text-xs text-on-surface-variant">Computer Science • Year 3</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 bg-primary-container/20 text-primary border-l-4 border-primary px-6 py-4 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">class</span>
+<span class="font-body-md font-semibold">My Classes</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-body-md">Assignments</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">quiz</span>
+<span class="font-body-md">Exams</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300 mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar (Mobile & Desktop) -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center w-full px-margin-mobile py-base border-b border-white/10">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a young student named Pranay Singh, smiling confidently. He is wearing a neat school uniform against a soft-focus campus background. The lighting is bright and modern, matching a premium educational app aesthetic with sharp focus and cinematic color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV2NXPmsX5GYWJvDNHB1M_JaqERJWzqa-Oer9-Ed_cNgcDD23pagdEJN_QJVErhYylTlXBXvu3rcPT_ViHAdPH2a4tyB7kfkRI6vi2wC7gNFell3qNuDaii0HDei-LmfwPfS7UCND4hjfAPQ7tA-m4JXNSrA0ZJfv-gggGzznbYkVMsl99vVeMoNYhpOuzdjxQKRAtdZ6yqMoA2WU6TUJhicfhLRs1kbr-tsF4OVNU0R1xKIoykB1heHFJlENB7qiZyw-L7et-NIGH">
+</div>
+<div>
+<h1 class="font-title-md text-title-md-mobile text-on-surface">Pranay Singh</h1>
+<p class="text-[10px] text-on-surface-variant flex items-center gap-1">
+                    Class 9 ICSE <span class="material-symbols-outlined text-[12px]">expand_more</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-base">
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors"><span class="material-symbols-outlined text-error">logout</span></button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Welcome Section -->
+<section class="mb-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Study Materials</h3>
+<p class="text-on-surface-variant mt-2">Access your notes, lectures, and shared documents.</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-high border border-white/10 px-4 py-2 rounded-full text-label-md flex items-center gap-2 hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        All Subjects
+                    </button>
+<button class="bg-surface-container-high border border-white/10 px-4 py-2 rounded-full text-label-md flex items-center gap-2 hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+                        Latest
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Subjects -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-xl">
+<!-- Mathematics Section -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">functions</span>
+</div>
+<h4 class="font-title-md text-on-surface">Mathematics</h4>
+</div>
+<a class="text-secondary text-label-md hover:underline" href="#">View all</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Material 1 -->
+<div class="glass-card featured-glow-cyan p-5 rounded-xl group hover:bg-surface-container-high/80 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-secondary/10 text-secondary text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Lecture Notes</div>
+<button class="text-on-surface-variant group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<h5 class="font-title-md text-[18px] text-on-surface mb-1">Advanced Calculus III</h5>
+<p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Detailed notes covering multi-variable integration and vector fields.</p>
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> 2h ago</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">description</span> 4.2 MB</span>
+</div>
+</div>
+<!-- Material 2 -->
+<div class="glass-card p-5 rounded-xl group hover:bg-surface-container-high/80 transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-tertiary/10 text-tertiary text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded">Practice Set</div>
+<button class="text-on-surface-variant group-hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<h5 class="font-title-md text-[18px] text-on-surface mb-1">Linear Algebra Problems</h5>
+<p class="text-sm text-on-surface-variant mb-4 line-clamp-2">Weekly practice set focusing on Eigenspaces and Diagonalization.</p>
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span> Yesterday</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">description</span> 1.8 MB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Physics Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h4 class="font-title-md text-on-surface">Physics</h4>
+</div>
+</div>
+<div class="flex flex-col gap-4 h-full">
+<div class="glass-card featured-glow-violet p-5 rounded-xl h-full flex flex-col group cursor-pointer" style="transform: translateY(0px);">
+<div class="bg-primary/10 text-primary text-[10px] uppercase font-bold tracking-widest px-2 py-1 rounded self-start mb-4">Video Lecture</div>
+<div class="relative w-full aspect-video rounded-lg mb-4 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-tech digital physics simulation visual showing a 3D model of a particle accelerator. The scene is rendered in neon violet and deep blue with glowing traces of subatomic particles. Sleek, glass-like UI overlays with mathematical formulas and wave patterns surround the main subject. Dark mode aesthetic with high-contrast glowing elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf4-DsZMkgjfyqYvCavtG5090q1kmhM4qmIrTIwe48rTGwMTQDnchdIJtUQN52Xly2Bs2_H6pbkcziptBkFkTUhBZcvcCzSVuxl3v-D-yd6oSQW1nYOizODVbgT_qHd5MUbEbREm_K5N3eaHijkGTjPXLsPmPEqZuPMYrjH4ZLiTe2XMTSVDDdI9Kq30AhZUMDS8Bw4Qtb2dI2_pmIvp24hYRBLJRe6EBCcBbs-NahMAYsGO6netBeG8sK0JRr2k-TC4oIDusC1l1S">
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-[48px]">play_circle</span>
+</div>
+</div>
+<h5 class="font-title-md text-[18px] text-on-surface mb-1">Quantum Mechanics II</h5>
+<p class="text-sm text-on-surface-variant mb-auto">Video summary of Schrödinger Equation applications.</p>
+<div class="flex items-center justify-between mt-4 text-xs text-on-surface-variant border-t border-white/5 pt-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 45 mins</span>
+<button class="text-primary flex items-center gap-1 font-bold">Watch <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- CS Section -->
+<div class="lg:col-span-12 mt-lg">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">code</span>
+</div>
+<h4 class="font-title-md text-on-surface">Computer Science</h4>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Project Docs -->
+<div class="glass-card featured-glow-green p-6 rounded-xl flex items-center gap-4 hover:translate-y-[-4px] transition-transform cursor-pointer">
+<div class="w-14 h-14 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[32px]">folder_zip</span>
+</div>
+<div class="flex-1">
+<h6 class="font-semibold text-on-surface">Project_Alpha.zip</h6>
+<p class="text-xs text-on-surface-variant">Required Assets &amp; Docs</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-tertiary hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+<!-- Shared Doc -->
+<div class="glass-card p-6 rounded-xl flex items-center gap-4 hover:translate-y-[-4px] transition-transform cursor-pointer">
+<div class="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]">description</span>
+</div>
+<div class="flex-1">
+<h6 class="font-semibold text-on-surface">Ethics in AI.pdf</h6>
+<p class="text-xs text-on-surface-variant">Shared by Prof. Chen</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<!-- Code Snippets -->
+<div class="glass-card p-6 rounded-xl flex items-center gap-4 hover:translate-y-[-4px] transition-transform cursor-pointer">
+<div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">terminal</span>
+</div>
+<div class="flex-1">
+<h6 class="font-semibold text-on-surface">Algos_Lab_3.js</h6>
+<p class="text-xs text-on-surface-variant">Template code provided</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Feed (Bottom) -->
+<section class="mb-lg">
+<h4 class="font-title-md text-on-surface mb-6">Recent Activity</h4>
+<div class="glass-card rounded-2xl overflow-hidden divide-y divide-white/5">
+<div class="p-4 flex items-center gap-4 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">cloud_done</span>
+<div class="flex-1">
+<p class="text-sm"><span class="font-bold text-on-surface">System:</span> Successfully synced <span class="text-secondary">Chemistry Notes</span> across devices.</p>
+<p class="text-[10px] text-on-surface-variant mt-1">10 minutes ago</p>
+</div>
+</div>
+<div class="p-4 flex items-center gap-4 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">group</span>
+<div class="flex-1">
+<p class="text-sm"><span class="font-bold text-on-surface">Group A:</span> Added <span class="text-tertiary">Design_Specs_v2.fig</span> to shared folder.</p>
+<p class="text-[10px] text-on-surface-variant mt-1">1 hour ago</p>
+</div>
+</div>
+<div class="p-4 flex items-center gap-4 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">error</span>
+<div class="flex-1">
+<p class="text-sm"><span class="font-bold text-on-surface">Reminder:</span> Calculus Assignment is due in <span class="text-primary">4 hours</span>.</p>
+<p class="text-[10px] text-on-surface-variant mt-1">3 hours ago</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Navigation Bar -->
+
+<script>
+        // Simple hover interaction script for cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+
+
+
+
+</body></html>

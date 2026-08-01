@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions for ERP verification
+    function getUserDoc(auth) {
+      return get(/databases/$(database)/documents/users/$(auth.uid));
+    }
+    
+    function isErpUserOfInstitute(auth, instituteId) {
+      let user = getUserDoc(auth);
+      return auth != null && 
+             user != null && 
+             user.data.instituteId == instituteId && 
+             user.data.role in ['owner', 'admin', 'teacher', 'staff'];
+    }
+
+    // Central Users collection
+    match /users/{userId} {
+      allow read, write: if request.auth != null;
+    }
+
+    // Existing Chat Sessions (User specific)
+    match /users/{userId}/chatSessions/{sessionId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      match /messages/{messageId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // ERP Module Subcollections
+    match /institutes/{instituteId} {
+      // Allowed if authorized staff of this institute
+      allow read, write: if isErpUserOfInstitute(request.auth, instituteId);
+      
+      // Cascade security rules recursively to all subcollections
+      match /{document=**} {
+        allow read, write: if isErpUserOfInstitute(request.auth, instituteId);
+      }
+    }
+  }
+}

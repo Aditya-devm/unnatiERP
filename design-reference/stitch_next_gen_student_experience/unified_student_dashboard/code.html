@@ -1,0 +1,321 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Student Portal | Daily Pulse</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Sora:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#131b2e",
+                        "surface-container": "#171f33",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-container": "#007650",
+                        "on-tertiary-fixed": "#002113",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#060e20",
+                        "on-background": "#dae2fd",
+                        "secondary-fixed": "#acedff",
+                        "on-tertiary": "#003824",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "tertiary": "#4edea3",
+                        "on-secondary": "#003640",
+                        "surface-container-high": "#222a3d",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "inverse-surface": "#dae2fd",
+                        "on-primary-fixed": "#25005a",
+                        "primary-container": "#7c3aed",
+                        "surface": "#0b1326",
+                        "background": "#0b1326",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#d2bbff",
+                        "primary-fixed": "#eaddff",
+                        "primary": "#d2bbff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-secondary-container": "#00424e",
+                        "inverse-on-surface": "#283044",
+                        "secondary-container": "#03b5d3",
+                        "on-tertiary-container": "#76ffc2",
+                        "surface-dim": "#0b1326",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "surface-container-highest": "#2d3449",
+                        "on-primary": "#3f008e",
+                        "outline": "#958da1",
+                        "on-surface-variant": "#ccc3d8",
+                        "on-surface": "#dae2fd",
+                        "outline-variant": "#4a4455",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#ede0ff",
+                        "inverse-primary": "#732ee4",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "primary-fixed-dim": "#d2bbff",
+                        "surface-bright": "#31394d",
+                        "surface-variant": "#2d3449",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "secondary": "#4cd7f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "xl": "48px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "lg": "32px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "md": "20px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "stats-number": ["Sora"],
+                        "headline-lg-mobile": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "title-md": ["Sora"],
+                        "display-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "stats-number": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neo-glow-primary {
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+        }
+        .neo-glow-secondary {
+            box-shadow: 0 0 15px rgba(76, 215, 246, 0.4);
+        }
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center w-full px-margin-mobile py-base border-b border-white/10">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a young student named Pranay Singh, smiling confidently. He is wearing a neat school uniform against a soft-focus campus background. The lighting is bright and modern, matching a premium educational app aesthetic with sharp focus and cinematic color grading." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV2NXPmsX5GYWJvDNHB1M_JaqERJWzqa-Oer9-Ed_cNgcDD23pagdEJN_QJVErhYylTlXBXvu3rcPT_ViHAdPH2a4tyB7kfkRI6vi2wC7gNFell3qNuDaii0HDei-LmfwPfS7UCND4hjfAPQ7tA-m4JXNSrA0ZJfv-gggGzznbYkVMsl99vVeMoNYhpOuzdjxQKRAtdZ6yqMoA2WU6TUJhicfhLRs1kbr-tsF4OVNU0R1xKIoykB1heHFJlENB7qiZyw-L7et-NIGH">
+</div>
+<div>
+<h1 class="font-title-md text-title-md-mobile text-on-surface">Pranay Singh</h1>
+<p class="text-[10px] text-on-surface-variant flex items-center gap-1">
+                    Class 9 ICSE <span class="material-symbols-outlined text-[12px]">expand_more</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-base">
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors"><span class="material-symbols-outlined text-error">logout</span></button>
+</div>
+</header>
+<main class="px-margin-mobile pt-lg space-y-lg" data-stitch-orig-opacity="0">
+<!-- Hero Section: Daily Pulse -->
+
+<!-- Quick Action Grid -->
+<section class="grid grid-cols-4 gap-sm">
+<div class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-primary-container/20 border-primary/30">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">payments</span>
+</div>
+<span class="font-label-md text-[12px] text-on-surface-variant">Fees</span>
+</div>
+<div class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-secondary-container/20 border-secondary/30">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: &quot;FILL&quot; 1;">assignment</span>
+</div>
+<span class="font-label-md text-[12px] text-on-surface-variant">Exams</span>
+</div>
+<div class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-tertiary-container/20 border-tertiary/30">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: &quot;FILL&quot; 1;">school</span>
+</div>
+<span class="font-label-md text-[12px] text-on-surface-variant">Classwork</span>
+</div>
+<div class="flex flex-col items-center gap-xs group">
+<div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-error-container/20 border-error/30">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: &quot;FILL&quot; 1;">edit_document</span>
+</div>
+<span class="font-label-md text-[12px] text-on-surface-variant">Homework</span>
+</div>
+<div class="flex flex-col items-center gap-xs group"><div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-secondary-container/20 border-secondary/30"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">videocam</span></div><span class="font-label-md text-[12px] text-on-surface-variant">Live Class</span></div><div class="flex flex-col items-center gap-xs group"><div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-error-container/20 border-error/30"><span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">logout</span></div><span class="font-label-md text-[12px] text-on-surface-variant">Leave</span></div><div class="flex flex-col items-center gap-xs group"><div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-primary-container/20 border-primary/30 neo-glow-primary"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span></div><span class="font-label-md text-[12px] text-on-surface-variant text-center">Unnati Powerprep</span></div><div class="flex flex-col items-center gap-xs group"><div class="w-14 h-14 glass-panel rounded-xl flex items-center justify-center group-active:scale-90 transition-transform bg-primary-container/20 border-primary/30 neo-glow-primary"><span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">layers</span></div><span class="font-label-md text-[12px] text-on-surface-variant text-center">Worksheets</span></div></section>
+<!-- Current Status Cards -->
+<section class="space-y-sm">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest px-1">Upcoming</h3>
+<div class="flex gap-sm overflow-x-auto pb-2 hide-scrollbar">
+<!-- Next Class -->
+<div class="min-w-[240px] glass-panel rounded-xl p-md border-l-4 border-secondary relative overflow-hidden group active:scale-95 transition-transform cursor-pointer">
+  <div class="flex justify-between items-start">
+    <div>
+      <span class="text-[10px] font-bold text-secondary-fixed uppercase">Upcoming Test</span>
+      <h4 class="font-title-md text-on-surface mt-xs">Mathematics</h4>
+    </div>
+    <span class="material-symbols-outlined text-secondary">event_note</span>
+  </div>
+  <div class="mt-md flex items-center justify-between">
+    <p class="text-[12px] text-on-surface-variant">Mon, 22 July • 10:00 AM</p>
+    <span class="material-symbols-outlined text-secondary text-[18px]">arrow_forward_ios</span>
+  </div>
+</div>
+<!-- Library Due -->
+<div class="min-w-[240px] glass-panel rounded-xl p-md border-l-4 border-primary">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] font-bold text-primary-fixed uppercase">Library Due</span>
+<h4 class="font-title-md text-on-surface mt-xs">History Vol. 2</h4>
+</div>
+<span class="material-symbols-outlined text-primary">auto_stories</span>
+</div>
+<div class="mt-md">
+<p class="text-[12px] text-on-surface-variant">Due on July 28, 2026</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Attendance Heatmap -->
+<section class="glass-panel rounded-xl p-md">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-title-md text-title-md-mobile">Attendance Summary</h3>
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_left</span>
+<span class="font-label-md text-label-md">Jul-2026</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-y-sm text-center mb-base">
+<span class="text-[10px] text-on-surface-variant font-bold">M</span>
+<span class="text-[10px] text-on-surface-variant font-bold">T</span>
+<span class="text-[10px] text-on-surface-variant font-bold">W</span>
+<span class="text-[10px] text-on-surface-variant font-bold">T</span>
+<span class="text-[10px] text-on-surface-variant font-bold">F</span>
+<span class="text-[10px] text-on-surface-variant font-bold">S</span>
+<span class="text-[10px] text-on-surface-variant font-bold">S</span>
+</div>
+<div class="grid grid-cols-7 gap-y-md gap-x-2 text-center">
+<!-- Row 1 -->
+<div class="text-[12px] text-on-surface-variant/30 py-2">29</div>
+<div class="text-[12px] text-on-surface-variant/30 py-2">30</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto shadow-lg shadow-tertiary/20">01</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto shadow-lg shadow-tertiary/20">02</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto shadow-lg shadow-tertiary/20">03</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto shadow-lg shadow-tertiary/20">04</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto shadow-lg shadow-tertiary/20">05</div>
+<!-- Row 2 -->
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">06</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[12px] mx-auto">07</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">08</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">09</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">10</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">11</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">12</div>
+<!-- Row 3 with Absence -->
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">13</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">14</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">15</div>
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold text-[12px] mx-auto neo-glow-primary">16</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">17</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">18</div>
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-bold text-[12px] mx-auto">19</div>
+</div>
+<div class="mt-lg grid grid-cols-4 gap-xs">
+<div class="bg-tertiary/10 rounded-lg p-2 text-center border border-tertiary/20">
+<p class="text-[10px] text-tertiary font-bold">Present</p>
+<span class="font-stats-number text-[16px]">20</span>
+</div>
+<div class="bg-error/10 rounded-lg p-2 text-center border border-error/20">
+<p class="text-[10px] text-error font-bold">Absent</p>
+<span class="font-stats-number text-[16px]">03</span>
+</div>
+<div class="bg-primary/10 rounded-lg p-2 text-center border border-primary/20">
+<p class="text-[10px] text-primary font-bold">Late</p>
+<span class="font-stats-number text-[16px]">02</span>
+</div>
+<div class="bg-secondary/10 rounded-lg p-2 text-center border border-secondary/20">
+<p class="text-[10px] text-secondary font-bold">Leave</p>
+<span class="font-stats-number text-[16px]">00</span>
+</div>
+</div>
+</section>
+<!-- Academic Snapshot (Bento) -->
+
+<!-- Institute Info -->
+
+</main>
+<!-- Bottom Navigation Bar -->
+
+<script>
+        // Micro-interaction: Update progress ring on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const circle = document.querySelector('.progress-ring-circle');
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            const offset = circumference - (75 / 100 * circumference);
+            circle.style.strokeDashoffset = offset;
+        });
+
+        // Simple tab interaction visual feedback
+        const navButtons = document.querySelectorAll('nav button');
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                navButtons.forEach(b => {
+                    b.classList.remove('text-secondary', 'font-bold');
+                    b.classList.add('text-on-surface-variant');
+                    const icon = b.querySelector('.material-symbols-outlined');
+                    if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                btn.classList.add('text-secondary', 'font-bold');
+                btn.classList.remove('text-on-surface-variant');
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.fontVariationSettings = "'FILL' 1";
+                
+                btn.classList.add('scale-90');
+                setTimeout(() => btn.classList.remove('scale-90'), 150);
+            });
+        });
+    </script>
+
+
+</body></html>

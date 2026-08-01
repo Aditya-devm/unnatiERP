@@ -1,0 +1,370 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EduPulse - Homework &amp; Assignments</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#ccc3d8",
+                    "on-primary": "#3f008e",
+                    "on-secondary-fixed-variant": "#004e5c",
+                    "tertiary-fixed": "#6ffbbe",
+                    "surface-container": "#171f33",
+                    "surface-bright": "#31394d",
+                    "inverse-surface": "#dae2fd",
+                    "primary-fixed-dim": "#d2bbff",
+                    "primary-fixed": "#eaddff",
+                    "secondary-fixed": "#acedff",
+                    "inverse-primary": "#732ee4",
+                    "on-error": "#690005",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "error": "#ffb4ab",
+                    "on-tertiary": "#003824",
+                    "on-secondary-fixed": "#001f26",
+                    "secondary-fixed-dim": "#4cd7f6",
+                    "outline": "#958da1",
+                    "primary": "#d2bbff",
+                    "on-tertiary-container": "#76ffc2",
+                    "error-container": "#93000a",
+                    "secondary": "#4cd7f6",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#2d3449",
+                    "surface-dim": "#0b1326",
+                    "surface-container-high": "#222a3d",
+                    "on-secondary-container": "#00424e",
+                    "tertiary-container": "#007650",
+                    "surface-container-lowest": "#060e20",
+                    "tertiary-fixed-dim": "#4edea3",
+                    "background": "#0b1326",
+                    "on-secondary": "#003640",
+                    "inverse-on-surface": "#283044",
+                    "primary-container": "#7c3aed",
+                    "outline-variant": "#4a4455",
+                    "surface": "#0b1326",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-background": "#dae2fd",
+                    "surface-container-low": "#131b2e",
+                    "surface-container-highest": "#2d3449",
+                    "surface-tint": "#d2bbff",
+                    "on-surface": "#dae2fd",
+                    "on-tertiary-fixed": "#002113",
+                    "tertiary": "#4edea3",
+                    "on-primary-fixed": "#25005a",
+                    "secondary-container": "#03b5d3",
+                    "on-primary-container": "#ede0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "margin-mobile": "16px",
+                    "gutter": "16px",
+                    "md": "20px",
+                    "sm": "12px",
+                    "lg": "32px",
+                    "base": "8px",
+                    "margin-desktop": "40px",
+                    "xl": "48px"
+            },
+            "fontFamily": {
+                    "title-md": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "stats-number": ["Sora"],
+                    "headline-lg-mobile": ["Sora"],
+                    "display-lg": ["Sora"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "stats-number": ["24px", {"lineHeight": "32px", "letterSpacing": "0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .featured-card {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(210, 187, 255, 0.3);
+            position: relative;
+        }
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #7c3aed, #4cd7f6);
+            border-radius: 2px 2px 0 0;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(124, 58, 237, 0.3);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md flex justify-between items-center w-full px-margin-mobile py-base border-b border-white/10">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" alt="Professional headshot of a young student named Pranay Singh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV2NXPmsX5GYWJvDNHB1M_JaqERJWzqa-Oer9-Ed_cNgcDD23pagdEJN_QJVErhYylTlXBXvu3rcPT_ViHAdPH2a4tyB7kfkRI6vi2wC7gNFell3qNuDaii0HDei-LmfwPfS7UCND4hjfAPQ7tA-m4JXNSrA0ZJfv-gggGzznbYkVMsl99vVeMoNYhpOuzdjxQKRAtdZ6yqMoA2WU6TUJhicfhLRs1kbr-tsF4OVNU0R1xKIoykB1heHFJlENB7qiZyw-L7et-NIGH">
+</div>
+<div>
+<h1 class="font-title-md text-on-surface">Pranay Singh</h1>
+<p class="text-[10px] text-on-surface-variant flex items-center gap-1">
+                    Class 9 ICSE <span class="material-symbols-outlined text-[12px]">expand_more</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-base">
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors relative">
+<span class="material-symbols-outlined text-primary">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+<button class="p-2 hover:bg-white/5 rounded-full transition-colors"><span class="material-symbols-outlined text-error">logout</span></button>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- Sidebar (Desktop) -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] w-72 bg-surface-dim border-r border-white/10 py-lg sticky top-16">
+<div class="px-6 mb-lg">
+<h2 class="font-title-md text-title-md text-primary">Alex Rivers</h2>
+<p class="text-on-surface-variant text-sm">Computer Science • Year 3</p>
+</div>
+<nav class="flex-1">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 bg-primary-container/20 text-primary border-l-4 border-primary px-6 py-4 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="">Assignments</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="class">class</span>
+<span class="">My Classes</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="">Exams</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-bright/50 transition-all duration-300 mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop bg-background custom-scrollbar overflow-y-auto md:mb-0">
+<div class="max-w-6xl mx-auto">
+<!-- Header Section -->
+<section class="mb-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Homework Hub</h1>
+<p class="text-on-surface-variant mt-xs">Track your academic progress and upcoming deadlines.</p>
+</div>
+<div class="flex gap-sm">
+<div class="glass-panel px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_rgba(76,215,246,0.5)]"></span>
+<span class="text-sm font-label-md">12 Pending</span>
+</div>
+<div class="glass-panel px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary shadow-[0_0_8px_rgba(78,222,163,0.5)]"></span>
+<span class="text-sm font-label-md">45 Done</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter / Search Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-lg">
+<div class="md:col-span-8 glass-panel p-4 rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-on-surface-variant" placeholder="Search by subject or topic..." type="text">
+</div>
+<div class="md:col-span-4 glass-panel p-4 rounded-xl flex items-center justify-between">
+<span class="text-on-surface-variant">Filter by status</span>
+<select class="bg-transparent border-none text-secondary focus:ring-0 cursor-pointer font-label-md">
+<option class="bg-surface-container">All Statuses</option>
+<option class="bg-surface-container">Pending</option>
+<option class="bg-surface-container">Submitted</option>
+<option class="bg-surface-container">Overdue</option>
+</select>
+</div>
+</div>
+<!-- Assignment List -->
+<div class="space-y-gutter">
+<!-- Overdue Item -->
+<div class="featured-card p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-md group hover:scale-[1.01] transition-transform duration-300" style="transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-error-container/20 border border-error/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-2xl" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container text-[10px] font-bold tracking-wider uppercase">Overdue</span>
+<span class="text-primary text-sm font-label-md">Computer Networks</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-background">TCP/IP Protocol Analysis</h3>
+<p class="text-on-surface-variant text-sm">Detailed report on packet headers and routing algorithms.</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-2">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span class="font-label-md text-sm">Missed: Oct 24, 2023</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md active:scale-95 transition-all shadow-[0_0_15px_rgba(210,187,255,0.2)]">Submit Now</button>
+</div>
+</div>
+<!-- Pending Item -->
+<div class="glass-panel p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-md group hover:bg-surface-bright/20 transition-all duration-300">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" data-icon="schedule">schedule</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-wider uppercase">Pending</span>
+<span class="text-primary text-sm font-label-md">Human Computer Interaction</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-background">Usability Testing Report</h3>
+<p class="text-on-surface-variant text-sm">Interview findings from 5 user testing sessions.</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-2">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span class="font-label-md text-sm">Due: Oct 28, 2023</span>
+</div>
+<button class="border border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary/10 active:scale-95 transition-all">Upload File</button>
+</div>
+</div>
+<!-- Submitted Item -->
+<div class="glass-panel opacity-80 p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/20 border border-tertiary/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container text-[10px] font-bold tracking-wider uppercase">Submitted</span>
+<span class="text-primary text-sm font-label-md">Discrete Mathematics</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface-variant line-through">Set Theory Problem Set 4</h3>
+<p class="text-on-surface-variant/60 text-sm">Proof of Venn diagrams and cardinality exercises.</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-2">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+<span class="font-label-md text-sm">Submitted on Oct 21</span>
+</div>
+<button class="text-on-surface-variant px-6 py-2 rounded-lg font-label-md hover:text-on-surface transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="visibility">visibility</span>
+                                View Submission
+                            </button>
+</div>
+</div>
+<!-- Pending Item 2 -->
+<div class="glass-panel p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-md group hover:bg-surface-bright/20 transition-all duration-300">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 border border-secondary/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" data-icon="edit_note">edit_note</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[10px] font-bold tracking-wider uppercase">Pending</span>
+<span class="text-primary text-sm font-label-md">Software Engineering</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-background">System Architecture Diagram</h3>
+<p class="text-on-surface-variant text-sm">Design of microservices for the final project portal.</p>
+</div>
+</div>
+<div class="flex flex-col md:items-end gap-2">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span class="font-label-md text-sm">Due: Oct 30, 2023</span>
+</div>
+<button class="border border-secondary text-secondary px-6 py-2 rounded-lg font-label-md hover:bg-secondary/10 active:scale-95 transition-all">Upload File</button>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-lg flex justify-center">
+<button class="glass-panel px-8 py-3 rounded-full text-primary font-label-md hover:border-primary transition-all active:scale-95">Load More Assignments</button>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+
+<!-- Background Decoration -->
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[100px]"></div>
+</div>
+<script>
+        // Micro-interaction for hover states on assignment cards
+        document.querySelectorAll('.glass-panel, .featured-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+
+        // Add small glow effect to status indicators via JS for dynamic pulsing
+        const pulses = document.querySelectorAll('.bg-secondary, .bg-tertiary');
+        pulses.forEach(p => {
+            p.animate([
+                { opacity: 0.5, transform: 'scale(1)' },
+                { opacity: 1, transform: 'scale(1.2)' },
+                { opacity: 0.5, transform: 'scale(1)' }
+            ], {
+                duration: 2000,
+                iterations: Infinity
+            });
+        });
+    </script>
+
+
+
+
+</body></html>
